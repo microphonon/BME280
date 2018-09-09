@@ -5,18 +5,15 @@
 
 /*
  Read and display temperature and relative humidity with BME280 sensor on F5529 Launchpad.  
- Sensor polled in forced mode using 
- the SPI interface. 
-  Internal trimming parameters must be
+ Sensor polled in forced mode using the SPI interface. Internal trimming parameters must be
  read from device to perform conversion of raw data.  Data displayed on terminal program. 
-Set serial port for 9600 baud, 8-bits, 1 stop, 
- no parity, no flow control. UART interface is on TXD (P3.3) and RXD (P3.4); these ports are reversed on 
- the receiving device, ie. the RX-TX are switched on the PC interface cable. UART polling with no RX interrupt. 
-Green LED on P4.7 illuminates during data transmission. SPI lines are on P3.0 (MOSI), P3.1 (MISO), P3.2 (CLK), 
-and P1.5 (CS) of UCB0 module. SPI clock 1 MHz.
-The CS line must be configured consistently in the BME280.h file. Main loop runs with timed interrupt from 
-LPM3 and VLO clock. 
-IDE with CCS 6.1.3 and nofloat printf support.Launchpad pins:
+ Set serial port for 9600 baud, 8-bits, 1 stop, no parity, no flow control. UART interface is 
+ on TXD (P3.3) and RXD (P3.4); these ports are reversed on the receiving device, ie. the RX-TX 
+ are switched on the PC interface cable. UART polling with no RX interrupt. Green LED on P4.7 
+ illuminates during data transmission. SPI lines are on P3.0 (MOSI), P3.1 (MISO), P3.2 (CLK), 
+ and P1.5 (CS) of UCB0 module. SPI clock 1 MHz.The CS line must be configured consistently in
+ the BME280.h file. Main loop runs with timed interrupt from LPM3 and VLO clock. IDE with 
+ CCS 6.1.3 and nofloat printf support.Launchpad pins:
 
 	P3.0  MOSI  SPI
 	P3.1  MISO  SPI
