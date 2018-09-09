@@ -14,5 +14,5 @@ and P1.5 (CS). SPI clock 1 MHz. The CS line must be configured consistently in t
 <br>P1.5  CS  SPI
  
  <p><b>BME280.h</b>    Library of 6 functions to extract and process data from the BME280 temperature-humidity sensor using 
-	the SPI protocol with the MSP430X5XX/MSP430X6XX MCU family.
+	the SPI protocol.
 
