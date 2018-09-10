@@ -13,7 +13,7 @@
  illuminates during data transmission. SPI lines are on P3.0 (MOSI), P3.1 (MISO), P3.2 (CLK), 
  and P1.5 (CS) of UCB0 module. SPI clock 1 MHz.The CS line must be configured consistently in
  the BME280.h file. Main loop runs with timed interrupt from LPM3 and VLO clock. IDE with 
- CCS 6.1.3 and nofloat printf support.Launchpad pins:
+ CCS 6.1.3 and nofloat printf support. Launchpad pins:
 
 	P3.0  MOSI  SPI
 	P3.1  MISO  SPI
