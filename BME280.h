@@ -119,7 +119,7 @@ void ReadTHsensor(void)
   	/* Read from sensor as follows: The ctrl_hum register is written with 0x72 followed by 0x01 for 1x oversampling.
  	The ctrl_meas register is written with 0x74; send 0x21 for temperature only, forced mode, 1x oversampling.
 	Send 0x25 for pressure + temperature, forced mode, 1x oversampling.
-	Sending 0x74 also wakes up the semsor and enables any changes written to the ctrl_humid register. The config 
+	Sending 0x74 also wakes up the sensor and enables any changes written to the ctrl_humid register. The config 
 	register 0x75 is forced to zero just in case. No filter is used as recommended for low rate polling.
   	Use recommended burst mode read of 8 data registers by sending address of first byte 0XF7. Retrieve
   	data while CSB is low. */
