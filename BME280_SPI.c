@@ -55,7 +55,7 @@ void main(void) {
     	while(1){}
     }
 
-    //Get the compensation coefficients from sensor for raw data conversion
+    //Get the trimming parameters from sensor for raw data conversion
     GetCompData();
 
     while(1)
