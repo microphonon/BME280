@@ -142,8 +142,8 @@ void main(void) {
   {
  	 UCA0CTL1 |= UCSWRST;                      // Reset to configure
  	 UCA0CTL1 |= UCSSEL_2;                     // SMCLK
- 	 UCA0BR0 = 6;                              // 1MHz 9600
- 	 UCA0BR1 = 0;                              // 1MHz 9600
+ 	 UCA0BR0 = 6;                              // Prescalers for 9600 baud
+ 	 UCA0BR1 = 0;                              
  	 UCA0MCTL = UCBRS_0 + UCBRF_13 + UCOS16;   // Modln UCBRSx=0, UCBRFx=0,
  	 UCA0CTL1 &= ~UCSWRST;                     // Initialize
   }
