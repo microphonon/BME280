@@ -15,5 +15,5 @@ and P1.5 (CS). SPI clock 1 MHz. The CS line must be configured consistently in t
  
  <p><b>BME280.h</b>    Library of 6 functions to extract and process data from the BME280 sensor using 
 	the SPI protocol. Modify registers ctrl_hum, ctrl_meas, and config
- as needed.  Consult the BME280 device documentation.
+ as needed.  Consult the BME280 data sheet.
 
