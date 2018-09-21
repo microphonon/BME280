@@ -1,5 +1,5 @@
 # BME280
-Demo program that uses SPI to communicate between Bosch BME280 temperature-humidity-pressure sensor and MSP430X5XX/MSP430X6XX family of MCUs
+Demo program that uses SPI to communicate between Bosch BME280 temperature-humidity-pressure sensor and MSP430FX5XX/MSP430FX6XX family of MCUs
 
 <p><b>BME280_SPI.c</b>    Read and display temperature, relative humidity, and pressure with BME280 sensor on F5529 Launchpad.  
  Sensor polled through SPI in forced mode with 1x oversampling and no filter. Internal trimming parameters must be
