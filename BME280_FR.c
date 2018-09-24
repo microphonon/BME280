@@ -11,8 +11,8 @@
  Set serial port for 9600 baud, 8-bits, 1 stop, no parity, no flow control. UART interface is
  on TXD (P2.5) and RXD (P2.6); these ports are reversed on the receiving device, ie. the RX-TX
  are switched on the PC interface cable. UART polling with no RX interrupt. Green LED on P1.0
- illuminates during data transmission. SPI lines are on P1.6 (MOSI), P1.7 (MISO), P2.2 (CLK),
- and P1.5 (CS) of UCB0 module. SPI clock 1 MHz.The CS line must be configured consistently in
+ illuminates during data transmission. SPI lines are on P1.6 (MOSI), P1.7 (MISO), P2.2 (CLK)
+ of UCB0 module and P1.5 (CS). SPI clock 1 MHz. The CS line must be configured consistently in
  the BME280.h file. Main loop runs with timed interrupt from LPM3 and VLO clock. IDE with
  CCS 6.1.3 and nofloat printf support. Launchpad pins:
 
@@ -92,36 +92,36 @@ void main(void) {
 
 void SetPins(void)
   {
-	 	PM5CTL0 &= ~LOCKLPM5; //Unlocks GPIO pins at power-up
- 	 /* Port 1
- 	  	P1.0 Green LED
- 	  	P1.1 Launchpad switch
- 	  	P1.5 Chip select.  Pull this line low to enable BME280 communication
- 			 CS_TH must also be defined in BME280.h
- 	    P1.6 MOSI
- 	    P1.7 MISO
- 	    */
- 	    P1DIR |= BIT0 + BIT1 + BIT2 + BIT3 + BIT4 + BIT5;
- 	    P1SEL1 |= BIT6 + BIT7; //Configure pins for SPI on UCB0
- 	    P1OUT &= ~BIT0; //LED off
+	PM5CTL0 &= ~LOCKLPM5; //Unlocks GPIO pins at power-up
+ 	/* Port 1
+ 	P1.0 Green LED
+	P1.1 Launchpad switch
+	P1.5 Chip select.  Pull this line low to enable BME280 communication
+ 		CS_TH must also be defined in BME280.h
+ 	P1.6 UCB0 MOSI
+ 	P1.7 UCB0 MISO
+ 	*/
+ 	P1DIR |= BIT0 + BIT1 + BIT2 + BIT3 + BIT4 + BIT5;
+ 	P1SEL1 |= BIT6 + BIT7; //Configure pins for SPI on UCB0
+ 	P1OUT &= ~BIT0; //LED off
 
- 	    /* Port 2
- 	    P2.1  Button on Launchpad
- 	    P2.2 SPI CLK
- 	    P2.5 TXD UART
- 	    P2.6 RXD UART
- 		*/
- 	   	P2DIR |= BIT0 + BIT1 + BIT2 + BIT3 + BIT4 + BIT7;
- 	    P2SEL1 |= BIT2 + BIT5 + BIT6; //Configure pins for SPI CLK; UART on UCA1
+	/* Port 2
+ 	P2.1  Button on Launchpad
+ 	P2.2 UCB0 SPI CLK
+ 	P2.5 UCA1 TXD UART
+ 	P2.6 UCA1 RXD UART
+	*/
+ 	P2DIR |= BIT0 + BIT1 + BIT2 + BIT3 + BIT4 + BIT7;
+ 	P2SEL1 |= BIT2 + BIT5 + BIT6; //Configure pins for SPI CLK; UART on UCA1
 
- 	    /* Port 3 */
- 	    P3DIR |=  BIT0 + BIT1 + BIT3 + BIT4 + BIT5 + BIT6 + BIT7;
+ 	/* Port 3 */
+	P3DIR |=  BIT0 + BIT1 + BIT3 + BIT4 + BIT5 + BIT6 + BIT7;
 
- 	    /* Port 4
- 	   	P4.6 Red LED
- 	   	*/
- 	    P4DIR |= BIT0 + BIT1 + BIT2 + BIT3 + BIT4 + BIT5 + BIT6 + BIT7;
- 	    P4OUT &= ~BIT6; //LED off
+	/* Port 4
+ 	P4.6 Red LED
+ 	*/
+ 	P4DIR |= BIT0 + BIT1 + BIT2 + BIT3 + BIT4 + BIT5 + BIT6 + BIT7;
+ 	P4OUT &= ~BIT6; //LED off
   }
 
  void SetVLO(void)
@@ -129,7 +129,7 @@ void SetPins(void)
 	 CSCTL0 = CSKEY; //Password to unlock the clock registers
 	 //Default frequency ~ 10 kHz
 	 CSCTL2 |= SELA__VLOCLK;  //Set ACLK to VLO
-	 CSCTL0_H = 0xFF; //Re-lock the clock registers
+	 CSCTL0_H = 0xFF; //Re-lock the clock registers; probably optional
     }
 
  void SetTimer(void)
