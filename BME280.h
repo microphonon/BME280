@@ -1,7 +1,8 @@
 /*
  BME280.h
  Library of 6 functions to extract and process data from the BME280 temperature-humidity sensor using 
- the SPI protocol.  Modify registers ctrl_hum, ctrl_meas, and config as needed.  Consult the BME280 device data sheet.
+ the SPI protocol with the UCB0 module.  Modify registers ctrl_hum, ctrl_meas, and config as needed.  
+ Consult the BME280 device data sheet.
  */
 
 #ifndef BME280_H_
