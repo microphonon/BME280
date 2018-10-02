@@ -1,8 +1,7 @@
 /*
- * BME280.h
+ BME280.h
  Library of 6 functions to extract and process data from the BME280 temperature-humidity sensor using 
- the SPI protocol with the MSP430X5XX/MSP430X6XX MCU family.  Modify registers ctrl_hum, ctrl_meas, and config
- as needed.  Consult the BME280 device documentation.
+ the SPI protocol.  Modify registers ctrl_hum, ctrl_meas, and config as needed.  Consult the BME280 device documentation.
  */
 
 #ifndef BME280_H_
