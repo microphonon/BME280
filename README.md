@@ -1,5 +1,5 @@
 # BME280
-Demo programs that use SPI to communicate between Bosch BME280 temperature-humidity-pressure sensor and MSP430FX5XX/FX6XX or MSP430FR59xx families of MCUs
+Demo programs that use SPI to communicate between Bosch BME280 temperature-humidity-pressure sensor and MSP430FX5XX/FX6XX or MSP430FR59xx families of MCUs.
 
 Read and display temperature, relative humidity, and pressure of the BME280 sensor using the F5529 or FR5969 Launchpad.  Sensor polled through SPI in forced mode with 1x oversampling and no filter. Internal trimming parameters must be read from device to perform conversion of raw data.  Data displayed on terminal program. Set serial port for 9600 baud, 8-bits, 1 stop, no parity, no flow control. UART polling with no RX interrupt.  SPI clock 1 MHz. The CS line must be configured consistently in the accompanying BME280.h header file. Main loop runs with timed interrupt from LPM3 and VLO clock. IDE with CCS 6.1.3 and nofloat printf support. 
 
